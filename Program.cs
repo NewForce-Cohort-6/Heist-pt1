@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace heist
 {
@@ -7,81 +8,47 @@ namespace heist
     {
         static void Main(string[] args)
         {
-            // Phase 2 step 1
-            List<TeamMember> HeistTeam = new List<TeamMember>();
-
-            Console.WriteLine("Plan Your Heist!");
-
-            Console.WriteLine("Lets make a team");
-
-            while (true)
-            {
-
-                Console.WriteLine("Name your teammate");
-
-                string name = Console.ReadLine();
-
-                if (name == "")
-                {
-                    break;
-                }
-
-                Console.WriteLine("Enter their skill level");
-
-                int skill = int.Parse(Console.ReadLine());
-
-
-                double courage = 0;
-
-                while (true)
-                {
-                    Console.WriteLine("Enter their courage factor");
-
-                    Console.WriteLine("0.0 - 2.0");
-
-                    courage = double.Parse(Console.ReadLine());
-                    if (courage >= 0 && courage <= 2)
-                    {
-
-                        break;
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
-
-                TeamMember heistBuddy = new TeamMember()
-                {
-                    Name = name,
-                    SkillLevel = skill,
-                    Courage = courage
-                };
-                // This will make both instances share the same name
-                // TeamMember liabality = heistBuddy;
-
-                // liabality.Name = "Tommy";
-
-                HeistTeam.Add(heistBuddy);
-                // HeistTeam.Add(liabality);
-                //------------------------
-
-            }
-            Console.WriteLine($"Here's The Crew ({HeistTeam.Count})");
-            HeistTeam.ForEach(heistBuddy =>
-            {
-                Console.WriteLine("----------------");
-                Console.WriteLine($"Name: {heistBuddy.Name}");
-                Console.WriteLine($"Skill Level: {heistBuddy.SkillLevel}");
-                Console.WriteLine($"Courage Factor: {heistBuddy.Courage}");
-
-            }
-           );
-
+            Methods newHeist = new Methods();
+            Console.WriteLine("Heist the Game");
+            Methods.Heist();
         }
+
     }
 
 }
+
+// Phase Six
+// The program should be updated to...
+
+// 1) At the beginning of the program, prompt the user to enter the difficulty level of the bank.
+// 2) At the end of the program, display a report showing the number of successful runs and the number of failed runs.
+
+// Phase Five
+// The program should be updated to...
+
+// 1) Run the scenario multiple times.
+// 2) After the user enters the team information, prompt them to enter the number of trial runs the program should perform.
+// 3) Loop through the difficulty / skill level calculation based on the user-entered number of trial runs. Choose a new luck value each time.
+
+
+// Phase Four
+// The program should be updated to...
+
+// 1) Create a random number between -10 and 10 for the heist's luck value.
+// 2) Add this number to the bank's difficulty level.
+// 3) Before displaying the success or failure message, display a report that shows.
+//  * The team's combined skill level
+//  * The bank's difficulty level
+
+
+// Phase Three
+// The program should be updated to...
+
+// 1) Stop displaying each team member's information.
+// 2) Store a value for the bank's difficulty level. Set this value to 100.
+// 3) Sum the skill levels of the team. Save that number.
+// 4) Compare the number with the bank's difficulty level. If the team's skill level is greater than or equal to the bank's difficulty level, Display a success message, otherwise display a failure message.
+
 
 // Phase Two
 // The program should be updated to...
